@@ -1,6 +1,8 @@
 // const person1 = "Maitry";
 // const gender1 = "female";
 
+const { resourceUsage } = require("process");
+
 // const person2 = "Rudra";
 // const gender2 = "male";
 
@@ -72,36 +74,52 @@
 // console.log("Maitry");
 
 //Promises
-function findSum(n){
-    let ans = 0;
-    for(let i = 0 ; i < n ; i++){
-        ans+=i
-    }
-    return ans;
-}
+// function findSum(n){
+//     let ans = 0;
+//     for(let i = 0 ; i < n ; i++){
+//         ans+=i
+//     }
+//     return ans;
+// }
 
-function findSumTill100(){
-    return findSum(100);
+// function findSumTill100(){
+//     return findSum(100);
 
-}
+// }
 
-setTimeout(findSumTill100, 1000);
-console.log("Hello World");
+// setTimeout(findSumTill100, 1000);
+// console.log("Hello World");
 
-//Promises are syntactiacal sugar to make the above code pretty.
+// //Promises are syntactiacal sugar to make the above code pretty.
 
-const fs =  require("fs");
-function readFile(){
-    return new Promise(function(resolve){
-        fs.readFile("a.txt", "utf-8", function(err, data){
-            resolve(data);
-        }); 
-    });
-}
+// const fs =  require("fs");
+// function readFile(){
+//     return new Promise(function(resolve){
+//         fs.readFile("a.txt", "utf-8", function(err, data){
+//             resolve(data);
+//         }); 
+//     });
+// }
 
-function onDone(data){
-    console.log(data);
-}
+// function onDone(data){
+//     console.log(data);
+// }
 
-readFile().then(onDone);
+// readFile().then(onDone);
 
+const express = require("express");
+const { log } = require("console");
+const app = express();
+const port = 3000;
+app.get('/', function(req, res) {
+    res.send("<b>Hello world!</b>");
+})
+
+app.listen(port, function() {
+    console.log(`Example app listening on port ${port}`);
+})
+
+app.post('/conversations', function(req, res) {
+    console.log(req.headers['authorization']);
+    res.send('Hi there!');
+})
