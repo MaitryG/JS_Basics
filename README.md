@@ -26,3 +26,23 @@ NodeJs is a runtime while JS is a language. Some smart people took out the V8 en
 
 # What to do when you have to do a bunch of pre-checks in every route ?
 In express, you add middlewares to do that. 
+
+# What is express.json() middleware?
+The express.json() function is a built-in middleware in Express that is used for parsing incoming requests with JSON payload. The express.json middleware is important for parsing incoming JSON payloads and making that data available in the req.body or further processing within the routes. Without using express.json, Express will not automatically parse the JSON data in the request body.
+
+By using the express.json middleware, you can handle POST, PUT, or PATCH requests that send JSON data from the client to the server.
+
+# Global catches
+Global catches help you give the user a better error message.
+
+Error-handling messages: This is a special type of middleware function in Express that has 4 arguments (err, req, res, next). Express recognizes it as an error-handling middleware because of these four arguments.
+
+# What is zod?
+Library for schema validation. 
+
+Express is a library used to create HTTP Servers.
+Jsonwebtokens is a library used to create and verify jwts.
+Mongoose is a library that lets u connect to your database.
+
+# JWTS
+Json Web Tokens are some data that are converted into a simple string format.
