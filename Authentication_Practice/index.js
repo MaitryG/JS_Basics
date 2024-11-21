@@ -92,3 +92,5 @@ const user = new User({
     email: 'maitry@gmail.com', 
     password: '1234' });
 user.save();
+
+const jwt = require("jsonwebtoken");
